@@ -1,0 +1,1 @@
+# lambda-inventory-service
