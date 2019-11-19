@@ -1,0 +1,26 @@
+*.class
+.gradle
+**/build/
+**/bin/
+**/.settings/
+**/.project
+**/.classpath
+**/out/
+.idea/
+**/node_modules/
+collateral-service.iml
+local.json
+application-local.yml
+local.yml
+newman/*
+
+# Package Files
+**/*.jar
+**/*.war
+**/*.ear
+
+# Serverless directories
+**/.serverless
+.dynamo.pid
+.dynamodb/
+.DS_Store
