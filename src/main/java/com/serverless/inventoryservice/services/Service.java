@@ -1,7 +1,7 @@
-package com.serverless.inventoryservice.service;
+package com.serverless.inventoryservice.services;
 
-import com.serverless.inventoryservice.model.Item;
-import com.serverless.inventoryservice.repository.Repository;
+import com.serverless.inventoryservice.models.Item;
+import com.serverless.inventoryservice.repositories.Repository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

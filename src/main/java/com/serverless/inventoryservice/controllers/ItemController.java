@@ -1,7 +1,7 @@
-package com.serverless.inventoryservice.controller;
+package com.serverless.inventoryservice.controllers;
 
-import com.serverless.inventoryservice.model.Item;
-import com.serverless.inventoryservice.service.Service;
+import com.serverless.inventoryservice.models.Item;
+import com.serverless.inventoryservice.services.Service;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.*;

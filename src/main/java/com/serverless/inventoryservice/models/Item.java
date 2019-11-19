@@ -1,4 +1,4 @@
-package com.serverless.inventoryservice.model;
+package com.serverless.inventoryservice.models;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;

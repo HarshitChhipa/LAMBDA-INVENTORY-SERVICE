@@ -1,7 +1,7 @@
-package com.serverless.inventoryservice.repository;
+package com.serverless.inventoryservice.repositories;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.serverless.inventoryservice.model.Item;
+import com.serverless.inventoryservice.models.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

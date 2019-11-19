@@ -1,4 +1,4 @@
-service: inventory-service
+service: inventory-services
 
 plugins:
   - serverless-iam-roles-per-function
@@ -19,13 +19,13 @@ provider:
   timeout: 30
 
 package:
-  artifact: ./build/libs/inventory-service-0.1.jar
+  artifact: ./build/libs/inventory-services-0.1.jar
 
 functions:
 
   inventory-data:
     handler: com.serverless.inventoryservice.functions.ItemFunction
-    iamRoleStatementsName: inventory-service-inventory-data-role
+    iamRoleStatementsName: inventory-services-inventory-data-role
     iamRoleStatements:
       - Effect: Allow
         Action:
