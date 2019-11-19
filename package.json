@@ -1,11 +1,8 @@
 {
   "name": "Inventory-Service",
   "version": "1.0.0",
-  "description": "Collateral Service",
+  "description": "Inventory Service",
   "dependencies": {
-    "lodash": "4.17.12",
-    "newman": "^4.5.3",
-    "newman-reporter-html": "1.0.3",
     "serverless": "^1.48.3"
   },
   "devDependencies": {

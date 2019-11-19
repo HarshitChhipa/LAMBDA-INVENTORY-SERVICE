@@ -83,7 +83,7 @@ configurations {
 
 run.classpath += configurations.developmentOnly
 run.jvmArgs("-noverify", "-XX:TieredStopAtLevel=1", "-Dcom.sun.management.jmxremote")
-mainClassName = "com.serverless.CreateInventoryFunction"
+mainClassName = "com.serverless.inventoryservice.Application"
 applicationDefaultJvmArgs = [""]
 
 jar {
