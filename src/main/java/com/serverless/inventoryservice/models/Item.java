@@ -20,6 +20,9 @@ public class Item {
     private String name;
 
     @DynamoDBAttribute
+    private String price;
+
+    @DynamoDBAttribute
     private long quantity = 0;
 
 }

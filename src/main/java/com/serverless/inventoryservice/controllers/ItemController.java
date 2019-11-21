@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -47,5 +48,13 @@ public class ItemController {
         service.delete(itemId);
         return HttpResponse.ok();
     }
+
+    @Put(value = "/all", produces = MediaType.APPLICATION_JSON)
+    public HttpResponse putAll(@Body List<Item> items) {
+        LOGGER.info("Put items -  received: {}", items);
+        service.putAll(items);
+        return HttpResponse.ok(items);
+    }
+
 
 }

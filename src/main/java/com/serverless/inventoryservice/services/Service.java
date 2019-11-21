@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Singleton
@@ -37,5 +39,10 @@ public class Service {
     public void delete(String itemId) {
         LOGGER.info("Delete Item for : {}", itemId);
         repository.delete(itemId);
+    }
+
+    public void putAll(List<Item> items) {
+        if (Objects.nonNull(items))
+            items.forEach(item -> put(item));
     }
 }
