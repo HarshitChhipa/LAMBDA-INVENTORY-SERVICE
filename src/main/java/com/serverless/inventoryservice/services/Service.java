@@ -52,6 +52,6 @@ public class Service {
 
     public List<Item> getAllItems() {
         List<Item> items = repository.getAllItems();
-        return null;
+        return items;
     }
 }
