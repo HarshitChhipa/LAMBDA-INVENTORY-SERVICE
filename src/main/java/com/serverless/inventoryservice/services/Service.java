@@ -45,4 +45,9 @@ public class Service {
         if (Objects.nonNull(items))
             items.forEach(item -> put(item));
     }
+
+    public List<Item> getAllItems() {
+        List<Item> items = repository.getAllItems();
+        return null;
+    }
 }

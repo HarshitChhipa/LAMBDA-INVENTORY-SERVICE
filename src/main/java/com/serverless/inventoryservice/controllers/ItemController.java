@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-@Controller("/v1/item")
+@Controller
 public class ItemController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemController.class);
 
@@ -54,6 +54,13 @@ public class ItemController {
         LOGGER.info("Put items -  received: {}", items);
         service.putAll(items);
         return HttpResponse.ok(items);
+    }
+
+    @Get(value = "/all", produces = MediaType.APPLICATION_JSON)
+    public HttpResponse getAll() {
+        LOGGER.info("Get all items -  received");
+        List<Item> items = service.getAllItems();
+        return Objects.nonNull(items) ? HttpResponse.ok(items) : HttpResponse.notFound();
     }
 
 

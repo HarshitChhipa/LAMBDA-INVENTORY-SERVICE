@@ -1,6 +1,8 @@
 package com.serverless.inventoryservice.repositories;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList;
 import com.serverless.inventoryservice.models.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,5 +38,9 @@ public class Repository {
     public void delete(String itemId) {
         LOGGER.info("Delete Item : {}", itemId);
         mapper.delete(get(itemId));
+    }
+
+    public List<Item> getAllItems() {
+        return mapper.scan(Item.class, new DynamoDBScanExpression());
     }
 }
