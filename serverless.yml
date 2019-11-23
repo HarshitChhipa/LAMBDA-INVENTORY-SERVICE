@@ -38,5 +38,5 @@ functions:
           - arn:aws:dynamodb:${self:provider.region}:*:*
     events:
       - http:
-          path: /${self:custom.apiVersion}/item/{proxy+}
+          path: /${self:custom.apiVersion}/{proxy+}
           method: any
