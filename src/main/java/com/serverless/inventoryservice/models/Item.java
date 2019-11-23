@@ -20,9 +20,12 @@ public class Item {
     private String name;
 
     @DynamoDBAttribute
-    private String price;
+    private double price;
 
     @DynamoDBAttribute
     private long quantity = 0;
 
+    public void removeItemCount(long quantity) {
+        this.quantity = this.quantity - quantity;
+    }
 }

@@ -43,7 +43,11 @@ public class Service {
 
     public void putAll(List<Item> items) {
         if (Objects.nonNull(items))
-            items.forEach(item -> put(item));
+            items.forEach(item -> {
+                Item savedItem = get(item.getId());
+                savedItem.removeItemCount(item.getQuantity());
+                put(savedItem);
+            });
     }
 
     public List<Item> getAllItems() {

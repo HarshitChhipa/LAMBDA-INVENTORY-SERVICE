@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-@Controller
+@Controller("/v1/item")
 public class ItemController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemController.class);
 
