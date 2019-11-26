@@ -1,0 +1,43 @@
+service: inventory-service
+
+plugins:
+  - serverless-iam-roles-per-function
+
+custom:
+  apiVersion: v1
+
+resources:
+  - ${file(./deployment/resources/dynamodb.yml)}
+
+
+provider:
+  name: aws
+  runtime: java8
+  region: us-east-1
+  versionFunctions: false
+  stage: dev
+  timeout: 30
+
+package:
+  artifact: ./build/libs/inventory-service-0.1.jar
+
+functions:
+
+  inventory-data:
+    handler: com.serverless.inventoryservice.functions.ItemFunction
+    iamRoleStatementsName: inventory-service-inventory-data-role
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:Query
+          - dynamodb:PutItem
+          - dynamodb:GetItem
+          - dynamodb:UpdateItem
+          - dynamodb:DeleteItem
+          - dynamodb:Scan
+        Resource:
+          - arn:aws:dynamodb:${self:provider.region}:*:*
+    events:
+      - http:
+          path: /${self:custom.apiVersion}/{proxy+}
+          method: any

@@ -1,0 +1,12 @@
+{
+  "name": "Inventory-Service",
+  "version": "1.0.0",
+  "description": "Inventory Service",
+  "dependencies": {
+    "serverless": "^1.48.3"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.38",
+    "serverless-iam-roles-per-function": "^2.0.1"
+  }
+}
